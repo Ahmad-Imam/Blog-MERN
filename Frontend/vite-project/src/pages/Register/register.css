@@ -1,0 +1,52 @@
+.register{
+    height: calc(100vh - 50px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("https://www.linearity.io/blog/content/images/2022/03/610963083219da6a0a00ccb6_Cover-Dark-2.png");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerTitle{
+    font-size: 50px;
+    font-weight: bold;
+}
+.registerForm{
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.registerForm > label{
+    margin: 10px 0; 
+    font-weight: bold;
+}
+
+.registerForm > input{
+    padding: 10px;
+    border: none;
+    background-color: rgb(25, 25, 25);
+    color: whitesmoke;
+    border-radius: 5px;
+}
+.registerButton, .registerLoginButton{
+    margin-top: 20px;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 10px;
+    width: 150px;
+    align-self: center;
+    color: whitesmoke;
+}
+
+.registerLoginButton{
+    padding: 10px 20px;
+    background-color: slateblue;
+    
+}

@@ -1,0 +1,54 @@
+.navbar{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    color: white;
+    position: sticky;
+    top: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    /* font-family: 'Varela', sans-serif;
+    font-family: 'Varela Round', sans-serif; */
+}
+
+.navLeft, .navRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+.navCenter{
+    flex: 3;
+    background-color: darkolivegreen
+}
+
+.navList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 20px;
+}
+
+.navListItem{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.navImage{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.navIcon,.navSearchIcon{
+     font-size: 20px;
+     cursor: pointer;
+}

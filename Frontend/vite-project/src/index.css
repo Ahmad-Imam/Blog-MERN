@@ -1,0 +1,14 @@
+
+
+body{
+  /* width: 100%; */
+  background-color: rgb(25, 25, 25);
+  margin: 0px;
+  color: whitesmoke;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+ }
