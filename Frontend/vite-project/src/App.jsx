@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import SinglePost from "./components/singlePost/SinglePost";
@@ -15,9 +16,14 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
+import { LoginContext } from "./context/Context";
 
 function App() {
   const loggedIn = false;
+
+  const { user } = useContext(LoginContext);
+
+  console.log(user);
 
   return (
     <Router>
@@ -25,17 +31,26 @@ function App() {
       <Routes>
         <Route element={<Home />} path="/"></Route>
         <Route
-          element={loggedIn ? <Navigate replace to={"/"} /> : <Register />}
+          element={user ? <Navigate replace to={"/"} /> : <Register />}
           path="/register"
         ></Route>
-        <Route element={<Login />} path="/login"></Route>
-        <Route element={<Settings />} path="/settings"></Route>
-        <Route element={<Write />} path="/write"></Route>
+        <Route
+          element={user ? <Navigate replace to={"/"} /> : <Login />}
+          path="/login"
+        ></Route>
+        <Route
+          element={!user ? <Navigate replace to={"/login"} /> : <Settings />}
+          path="/settings"
+        ></Route>
+        <Route
+          element={!user ? <Navigate replace to={"/login"} /> : <Write />}
+          path="/write"
+        ></Route>
         <Route element={<Single />} path="/post/:postId"></Route>
       </Routes>
       {/* <Settings /> */}
       {/* <Login /> */}
-      <Register />
+      {/* <Register /> */}
       {/* <Write /> */}
     </Router>
   );

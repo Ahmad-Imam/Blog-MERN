@@ -1,9 +1,19 @@
 import React from "react";
+import { useContext } from "react";
 
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { LoginContext } from "../../context/Context";
+import { Logout } from "../../context/Actions";
 
 export default function Navbar() {
+  const { user, dispatch } = useContext(LoginContext);
+  const PF = "http://localhost:3000/images/";
+
+  function handleLogOut() {
+    dispatch(Logout());
+  }
+
   return (
     <div className="navbar">
       <div className="navLeft">
@@ -34,18 +44,33 @@ export default function Navbar() {
               Write
             </Link>
           </li>
-          <li className="navListItem">
-            <Link className="link" to={"/"}>
+          {user && (
+            <li className="navListItem" onClick={handleLogOut}>
               Logout
-            </Link>
-          </li>
+            </li>
+          )}
         </ul>
       </div>
       <div className="navRight">
-        <img
-          className="navImage"
-          src="https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg"
-        />
+        {user ? (
+          <Link to={"/settings"}>
+            <img className="navImage" src={PF + user.profilePic} />
+          </Link>
+        ) : (
+          <ul className="navList">
+            <li className="navListItem">
+              <Link className="link" to="/login">
+                LOGIN
+              </Link>
+            </li>
+            <li className="navListItem">
+              <Link className="link" to="/register">
+                REGISTER
+              </Link>
+            </li>
+          </ul>
+        )}
+
         <i className=" navSearchIcon fas fa-search"></i>
       </div>
     </div>

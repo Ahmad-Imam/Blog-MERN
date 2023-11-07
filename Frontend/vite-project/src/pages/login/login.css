@@ -45,6 +45,11 @@
     color: whitesmoke;
 }
 
+.loginButton:disabled{
+    cursor: progress;
+    background-color: red;
+}
+
 .loginRegisterButton{
     padding: 10px 20px;
     background-color: slateblue;
